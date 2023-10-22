@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <title>Online Referencing Generator</title>
+  <style>
+    img {
+      
+      
+      
+      width: 100px;
+      
+      border-radius: 15px;
+      position:absolute;
+      top: 0;
+      left: 0;
+    }
+    </style>
+</head>
+<body>
+  <script src="index.js"></script>
+
+
+
+
+  
+  <div class="heading">
+    
+    <a href="guide.html"><img src="book.png" width="100" height="100"></a>
+    <h1>Online Referencing Generator</h1>
+    <p>By Yuze</p>
+    <p>APA 7th Edition</p>
+    
+  </div>
+  <div class="tab">
+    <button class="tablinks" id="defaultOpen" onclick="openCat(event, 'webpage-organisation')">Webpage Organisation</button>
+    <button class="tablinks" onclick="openCat(event, 'webpage-author')">Webpage Author</button>
+    <button class="tablinks" onclick="openCat(event, 'video')">Video</button>
+    <button class="tablinks" onclick="openCat(event, 'book')">Book</button>
+    <button class="tablinks" onclick="openCat(event, 'image')">Image</button>
+  </div>
+  
+
+
+
+  <div id="webpage-organisation" class="tabcontent">
+    
+    <label for="woorganisation">Organisation </label><br>
+    <input type="text" id="woorganisation" required placeholder="Organisation"><br>
+    <label for="wodate">Date Published</label><br>
+    <input type="text" id="wodate" required placeholder="Year, Month Date"><br>
+    <label for="wotitle">Title of Website </label><br>
+    <input type="text" id="wotitle" required placeholder="Title"><br>
+    <label for="wourl">URL </label><br>
+    <input type="text" id="wourl" required placeholder="URL"><br>
+    <button type="button" class="formbutton" onclick="reference('wo')">Reference!</button>
+    <div class="response">
+      <h2>Your Reference:</h2>
+      <h2 id="woresponse">_________________ </h2>
+    </div>
+    <button type="button" class="formbutton" onclick="copy()">Copy reference</button>
+  </div>
+
+
+
+  <div id="webpage-author" class="tabcontent">
+    <label for="waauthorl">Author Last Name</label><br>
+    <input type="text" id="waauthorl" required placeholder="Last"><br>
+    <label for="waauthorf">Author First Initial</label><br>
+    <input type="text" id="waauthorf" required placeholder="First Initial"><br>
+    <label for="wadate">Year Published</label><br>
+    <input type="text" id="wadate" required placeholder="Year"><br>
+    <label for="watitle">Title of Website </label><br>
+    <input type="text" id="watitle" required placeholder="Title"><br>
+    <label for="waurl">URL </label><br>
+    <input type="text" id="waurl" required placeholder="URL"><br>
+    <button type="button" class="formbutton" onclick="reference('wa')">Reference!</button>
+    <div class="response">
+      <h2>Your Reference:</h2>
+      <h2 id="waresponse">_________________ </h2>
+    </div>
+    <button type="button" class="formbutton" onclick="copy()">Copy reference</button>
+  </div>
+
+
+
+  <div id="video" class="tabcontent">
+    <label for="viauthorl">Author Last Name</label><br>
+    <input type="text" id="viauthorl" required placeholder="Last"><br>
+    <label for="viauthorf">Author First Initial</label><br>
+    <input type="text" id="viauthorf" required placeholder="First Initial"><br>
+    <label for="vidate">Year Published</label><br>
+    <input type="text" id="vidate" required placeholder="Year"><br>
+    <label for="vititle">Title of Video </label><br>
+    <input type="text" id="vititle" required placeholder="Title"><br>
+    <label for="vipublisher">Publisher </label><br>
+    <input type="text" id="vipublisher" required placeholder="Publisher"><br>
+    <label for="viurl">URL </label><br>
+    <input type="text" id="viurl" required placeholder="URL"><br>
+    <button type="button" class="formbutton" onclick="reference('vi')">Reference!</button>
+    <div class="response">
+      <h2>Your Reference:</h2>
+      <h2 id="viresponse">_________________ </h2>
+    </div>
+    <button type="button" class="formbutton" onclick="copy()">Copy reference</button>
+  </div>
+
+
+
+
+  <div id="book" class="tabcontent">
+    <label for="boauthorl">Author Last Name</label><br>
+    <input type="text" id="boauthorl" required placeholder="Last"><br>
+    <label for="boauthorf">Author First Initial</label><br>
+    <input type="text" id="boauthorf" required placeholder="First Initial"><br>
+    <label for="bodate">Year Published</label><br>
+    <input type="text" id="bodate" required placeholder="Year"><br>
+    <label for="botitle">Title of Book </label><br>
+    <input type="text" id="botitle" required placeholder="Title"><br>
+    <label for="bopublisher">Publisher </label><br>
+    <input type="text" id="bopublisher" required placeholder="Publisher"><br>
+    <button type="button" class="formbutton" onclick="reference('bo')">Reference!</button>
+    <div class="response">
+      <h2>Your Reference:</h2>
+      <h2 id="boresponse">_________________ </h2>
+    </div>
+    <button type="button" class="formbutton" onclick="copy()">Copy reference</button>
+  </div>
+
+  <div id="image" class="tabcontent">
+    <label for="imauthorl">Author Last Name</label><br>
+    <input type="text" id="imauthorl" required placeholder="Last"><br>
+    <label for="imauthorf">Author First Initial</label><br>
+    <input type="text" id="imauthorf" required placeholder="First Initial"><br>
+    <label for="imdate">Year Published</label><br>
+    <input type="text" id="imdate" required placeholder="Year"><br>
+    <label for="imtitle">Title of Image </label><br>
+    <input type="text" id="imtitle" required placeholder="Title"><br>
+    <label for="imurl">Type of image </label><br>
+    <input type="text" id="imtype" required placeholder="Type: Photograph, Drawing, Paintings"><br>
+    <label for="imurl">URL </label><br>
+    <input type="text" id="imurl" required placeholder="URL"><br>
+    <button type="button" class="formbutton" onclick="reference('im')">Reference!</button>
+    <div class="response">
+      <h2>Your Reference:</h2>
+      <h2 id="imresponse">_________________ </h2>
+    </div>
+    <button type="button" class="formbutton" onclick="copy()">Copy reference</button>
+  </div>
+
+
+  
+  <!-- 
+  Comments
+  WO = webpage organisation
+  WA = webpage author
+  VI = Video
+  BO = Book
+  IM = IMAGE
+
+  Next Steps:
+  Add more types of sources
+  In text citation
+  List of references sorted alphabetically
+  Add pages such as referencing guide
+  
+  
+  -->
+
+<script>
+document.getElementById("defaultOpen").click();
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
