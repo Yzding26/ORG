@@ -60,11 +60,12 @@ function reference(type) {
     let authorl = document.querySelector('#waauthorl');
     let authorf = document.querySelector('#waauthorf');
     let date = document.querySelector('#wadate');
-    let title = document.querySelector('#watitle');
+    let wptitle = document.querySelector('#wawptitle');
+    let wstitle = document.querySelector('#wawstitle');
     let url = document.querySelector('#waurl');
     let response = document.querySelector('#waresponse');
 
-    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+title.value + ". Retrieved "+ retrieved+"from "+url.value;
+    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+wptitle.value + ". "+wstitle.value+ ". Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
   }
 
