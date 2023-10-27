@@ -122,20 +122,8 @@ function reference(type) {
 
 
 function copy(){
-   // Selecting the text to copy
-  
-   // Create a temporary textarea element
-   const textarea = document.createElement("textarea");
-
-   // Set the text content of the textarea
-   textarea.value = messagecopy;
- 
-   // Append the textarea to the document
-   document.body.appendChild(textarea);
-   // Copying the text
    
-   textarea.select();
-   navigator.clipboard.writeText(textarea.value)
+   navigator.clipboard.writeText(message)
      .then(function() {
        alert("Copied the text");
      })
