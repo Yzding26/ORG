@@ -48,7 +48,7 @@ function reference(type) {
     let title = document.querySelector('#wotitle');
     let url = document.querySelector('#wourl');
     let response = document.querySelector('#woresponse');
-
+    title.style.fontStyle = 'italic';
     message = organisation.value+". (" + date.value+ "). "+title.value + ". Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
 
@@ -123,15 +123,25 @@ function reference(type) {
 
 function copy(){
    // Selecting the text to copy
-   
+  
+   // Create a temporary textarea element
+   const textarea = document.createElement("textarea");
 
+   // Set the text content of the textarea
+   textarea.value = messagecopy;
+ 
+   // Append the textarea to the document
+   document.body.appendChild(textarea);
    // Copying the text
-   navigator.clipboard.writeText(message)
+   
+   textarea.select();
+   navigator.clipboard.writeText(textarea.value)
      .then(function() {
        alert("Copied the text");
      })
      .catch(function(error) {
        alert('Failed to copy text: ', error);
      });
+  document.body.removeChild(textarea);
 
 }
