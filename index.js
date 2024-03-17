@@ -49,7 +49,7 @@ function reference(type) {
     let url = document.querySelector('#wourl');
     let response = document.querySelector('#woresponse');
     title.style.fontStyle = 'italic';
-    message = organisation.value+". (" + date.value+ "). "+title.value + ". Retrieved "+ retrieved+"from "+url.value;
+    message = organisation.value+". (" + date.value+ "). "+"<em>"+title.value+"</em>" + ". Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
 
 
@@ -65,7 +65,7 @@ function reference(type) {
     let url = document.querySelector('#waurl');
     let response = document.querySelector('#waresponse');
 
-    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+wptitle.value + ". "+wstitle.value+ ". Retrieved "+ retrieved+"from "+url.value;
+    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+"<em>"+wptitle.value+"</em>" + ". "+wstitle.value+ ". Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
   }
 
@@ -79,7 +79,7 @@ function reference(type) {
     let publisher = document.querySelector('#vipublisher');
     let response = document.querySelector('#viresponse');
 
-    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+title.value + " [Video]. "+ publisher.value +". Retrieved "+ retrieved+"from "+url.value;
+    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+"<em>"+title.value+"</em>" + " [Video]. "+ publisher.value +". Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
   }
 
@@ -92,7 +92,7 @@ function reference(type) {
     let publisher = document.querySelector('#bopublisher');
     let response = document.querySelector('#boresponse');
 
-    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+title.value + ". "+ publisher.value+".";
+    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+"<em>"+title.value +"</em>"+ ". "+ publisher.value+".";
     response.innerHTML = message;
   }
 
@@ -106,7 +106,7 @@ function reference(type) {
     let type = document.querySelector('#imtype');
     let response = document.querySelector('#imresponse');
 
-    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+title.value + " ["+type.value+"]. Retrieved "+ retrieved+"from "+url.value;
+    message = authorl.value+", "+authorf.value+". (" + date.value+ "). "+"<em>"+title.value+"</em>" + " ["+type.value+"]. Retrieved "+ retrieved+"from "+url.value;
     response.innerHTML = message;
   }
 
@@ -131,5 +131,17 @@ function copy(){
        alert('Failed to copy text: ', error);
      });
   document.body.removeChild(textarea);
+
+}
+
+async function copyToClipboard(elementId) {
+  // Get the content of the element
+  
+  alert('Copied')
+
+  const type = "text/html";
+  const blob = new Blob([message], { type });
+  const data = [new ClipboardItem({ [type]: blob })];
+  await navigator.clipboard.write(data);
 
 }
